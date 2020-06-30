@@ -10,10 +10,12 @@ class AuthenticationController < ApplicationController
                 render json: {token: token}
             else 
                 render json: "wrong password/username!"
+                # render json: "wrong password/username!", status: :unanthorized
+                
             end
-        # render json: "user found!"
        else 
         render json: "no such user!"
+        # render json: "no such user!", status: :unanthorized
        end
     end
 
